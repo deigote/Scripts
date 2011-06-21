@@ -1,0 +1,29 @@
+#!/bin/bash
+# Uses the grails version specified in the app properties file. If none found, uses the default installation
+# Diego Toharia - diego@toharia.com
+
+GRAILS_INSTALLATIONS_HOME="$HOME/local"
+DEFAULT_GRAILS_DIR="$GRAILS_INSTALLATIONS_HOME/grails"
+PROPERTIES_FILE=application.properties
+
+GRAILS_HOME=""
+if [ -f "$PROPERTIES_FILE" ]; then
+	GRAILS_VERSION=`grep app.grails.version= "$PROPERTIES_FILE" | cut -d'=' -f2`
+	if [ ! -z "$GRAILS_VERSION" ] ; then
+		REQUIRED_GRAILS_DIR="$GRAILS_INSTALLATIONS_HOME/grails-$GRAILS_VERSION"
+		if [ -d "$REQUIRED_GRAILS_DIR" ]; then
+			GRAILS_HOME="$REQUIRED_GRAILS_DIR"
+		fi
+	fi
+fi
+if [ -z "$GRAILS_HOME" ] ; then
+	GRAILS_HOME="$DEFAULT_GRAILS_DIR"
+fi
+export GRAILS_HOME
+
+echo "=================================================="
+echo "Using $GRAILS_HOME as grails home..."
+echo "=================================================="
+
+$GRAILS_HOME/bin/grails $*
+
