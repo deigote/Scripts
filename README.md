@@ -22,8 +22,8 @@ grails
   can be changed editing the variable WHERE_TO_LOOK_FOR_GRAILS_INSTALLATIONS). Example:
 
        	/home/user/local/grails-1.3.5
-	/home/user/local/grails-1.2.1
-	/opt/grails
+        /home/user/local/grails-1.2.1
+        /opt/grails
 
 * The installation named grails will be used as default (can be changed editing
   the variable DEFAULT_GRAILS_INSTALLATION_NAME).
