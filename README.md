@@ -6,7 +6,7 @@ developed along the time. Below you can find a description of each one.
 grails
 -------------
 
-* Description: a script to work with different grails versions simultaneously
+* **Description**: a script to work with different grails versions simultaneously
 * Dependencies: 
   * grails (one or more installations)
 * Usage:
