@@ -1,3 +1,5 @@
+# Below you can find a description of all the scripts of the project
+
 grails
 -------------
 
